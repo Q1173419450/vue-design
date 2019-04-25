@@ -1,5 +1,5 @@
 import Vue from "vue";
-import { Button, layout, Icon, Drawer, Radio } from 'ant-design-vue';
+import { Button, layout, Icon, Drawer, Radio, Menu } from 'ant-design-vue';
 import App from "./App.vue";
 import router from "./router";
 import store from "./store";
@@ -11,8 +11,9 @@ Vue.config.productionTip = false;
 Vue.use(Button);
 Vue.use(layout);
 Vue.use(Icon);
-Vue.use(Drawer)
-Vue.use(Radio)
+Vue.use(Drawer);
+Vue.use(Radio);
+Vue.use(Menu);
 
 new Vue({
   router,

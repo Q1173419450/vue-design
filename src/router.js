@@ -14,6 +14,7 @@ const router = new Router({
     {
       // 提供router-view 的占位符
       path: '/user',
+      hideInMenu: true,
       // render 函数
       // component: {render: h => h('router-view')},
       component: () => {
@@ -53,12 +54,19 @@ const router = new Router({
         {
           path: '/dashboard',
           name: 'dashboard',
+          meta: {
+            icon: 'dashboard',
+            title: '仪表盘'
+          },
           component: {render: h => h('router-view')},
           children: [
             {
               // 分析页
               path: '/dashboard/analysis',
               name: 'analysis',
+              meta: {
+                title: '分析页'
+              },
               component: () => import("./views/Dashboard/Analysis")
             }
           ]
@@ -67,18 +75,25 @@ const router = new Router({
         {
           path: '/form',
           name: 'form',
+          meta: {
+            icon: 'form',
+            title: '表单'
+          },
           component: {render: h => h('router-view')},
           children: [
             {
               // 基础表单
               path: '/form/basic-form',
               name: 'basicform',
+              meta: {title: '基础表单'},
               component: () => import('./views/Forms/BasicForm')
             },
             {
               // 分步表单
               path: '/form/step-form',
               name: 'stepform',
+              meta: {title: '分步表单'},
+              hideInChildrenMenu: true,
               component: () => import('./views/Forms/StepForm'),
               children: [
                 {
@@ -112,6 +127,7 @@ const router = new Router({
     {
       path: '*',
       name: '404',
+      hideInMenu: true,
       component: NotFound
     }
   ]
