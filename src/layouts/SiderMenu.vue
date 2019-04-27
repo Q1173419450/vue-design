@@ -7,7 +7,11 @@
       :theme="theme"
     >
       <template v-for="item in menuData">
-        <a-menu-item v-if="!item.children" :key="item.path" @click='() => $router.push({path: item.path})'>
+        <a-menu-item 
+          v-if="!item.children" 
+          :key="item.path" 
+          @click='() => $router.push({path: item.path, query: $route.query})'
+        >
           <a-icon v-if='item.meta.icon' :type="item.meta.icon" />
           <span>{{ item.meta.title }}</span>
         </a-menu-item>
@@ -22,7 +26,8 @@
  * recommend(函数式组件) SubMenu.vue https://github.com/vueComponent/ant-design-vue/blob/master/components/menu/demo/SubMenu.vue
  * SubMenu1.vue https://github.com/vueComponent/ant-design-vue/blob/master/components/menu/demo/SubMenu1.vue
  * */
-import SubMenu from './SubMenu'
+import SubMenu from './SubMenu';
+import { isCheck } from '../utils/auth';
 export default {
   props: {
     theme: {
@@ -62,9 +67,13 @@ export default {
     toggleCollapsed () {
       this.collapsed = !this.collapsed
     },
+    // 路由管理菜单列表
     getMenuData(routes = [], parentKeys = [], selectedKey) {
       const menuData = [];
-      routes.forEach(item => {
+      for (let item of routes) {
+        if (item.meta && item.meta.authority && !isCheck(item.meta.authority)) {
+          break;
+        }
         if (item.name && !item.hideInMenu) {
           // 层级
           this.openKeysMap[item.path] = parentKeys;
@@ -96,7 +105,7 @@ export default {
             ...this.getMenuData(item.children, [...parentKeys, item.path])
           );
         }
-      })
+      }
       console.log(menuData);
       return menuData;
     }
