@@ -1,13 +1,11 @@
 <template>
   <div>
-    StepResult.vue
+    操作成功，预计俩小时到账
   </div>
 </template>
 
 <script>
-export default {
-  name: ""
-};
+export default {};
 </script>
 
 <style scoped></style>
