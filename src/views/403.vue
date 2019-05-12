@@ -1,14 +1,11 @@
 <template>
-    <div>
-        403.vue
-    </div>
+  <div>
+    403.vue
+  </div>
 </template>
 
 <script>
-export default {
-};
+export default {};
 </script>
 
-<style>
-
-</style>
+<style></style>

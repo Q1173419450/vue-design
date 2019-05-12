@@ -3,22 +3,22 @@
 </template>
 
 <script>
-import echarts from 'echarts';
-import debounce from 'lodash/debounce'
+import echarts from "echarts";
+import debounce from "lodash/debounce";
 // 监听屏幕大小变化，图表也变化
-import { addListener, removeListener } from 'resize-detector'
+import { addListener, removeListener } from "resize-detector";
 export default {
   props: {
     option: {
       type: Object,
-      default: ()=> {}
+      default: () => {}
     }
   },
   watch: {
     // 改了chart内部的值，option是不会变化的
     option(val) {
       this.chart.setOption(val);
-    },
+    }
     // 深度监听、过于耗费性能
     // option: {
     //   handler(val) {
@@ -52,9 +52,7 @@ export default {
     this.chart.dispose();
     this.chart = null;
   }
-}
+};
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

@@ -1,7 +1,7 @@
 <template>
   <div :class="[`nav-theme-${navTheme}`, `nav-layout-${navLayout}`]">
     <a-layout id="components-layout-demo-side" style="min-height: 100vh">
-      <a-layout-sider 
+      <a-layout-sider
         v-if="navLayout === 'left'"
         :theme="navTheme"
         :trigger="null"
@@ -9,17 +9,17 @@
         v-model="collapsed"
         width="256px"
       >
-        <div class="logo" >Ant Design Vue Pro</div>
-        <SiderMenu :theme='navTheme'/>
+        <div class="logo">Ant Design Vue Pro</div>
+        <SiderMenu :theme="navTheme" />
       </a-layout-sider>
       <a-layout>
-        <a-layout-header style="background: #fff; padding: 0" >
+        <a-layout-header style="background: #fff; padding: 0">
           <!-- v-auth="['admin']" -->
-          <a-icon 
+          <a-icon
             v-if="navLayout === 'left'"
             class="base-trigger"
-            :type="collapsed ? 'menu-fold' : 'menu-unfold'" 
-            @click='collapsed = !collapsed'
+            :type="collapsed ? 'menu-fold' : 'menu-unfold'"
+            @click="collapsed = !collapsed"
           ></a-icon>
           <Header></Header>
         </a-layout-header>
@@ -38,23 +38,23 @@
 </template>
 
 <script>
-import Header from './Header';
-import Footer from './Footer';
-import SiderMenu from './SiderMenu';
-import SettingDrawer from '../components/SettingDrawer';
+import Header from "./Header";
+import Footer from "./Footer";
+import SiderMenu from "./SiderMenu";
+import SettingDrawer from "../components/SettingDrawer";
 
 export default {
   data() {
     return {
-      collapsed: false,
-    }
+      collapsed: false
+    };
   },
   computed: {
     navTheme() {
-      return this.$route.query.navTheme || 'dark'
+      return this.$route.query.navTheme || "dark";
     },
     navLayout() {
-      return this.$route.query.navLayout || 'left'
+      return this.$route.query.navLayout || "left";
     }
   },
   components: {
@@ -67,25 +67,25 @@ export default {
 </script>
 
 <style scoped>
-  .base-trigger {
-    padding: 0 20px;
-    line-height: 64px;
-    font-size: 20px;
-  }
-  
-  .base-trigger:hover {
-    background: #eee;
-  }
+.base-trigger {
+  padding: 0 20px;
+  line-height: 64px;
+  font-size: 20px;
+}
 
-  .logo {
-    height: 64px;
-    line-height: 64px;
-    font-size: 20px;
-    text-align: center;
-    overflow: hidden;
-  }
+.base-trigger:hover {
+  background: #eee;
+}
 
-  .nav-theme-dark >>> .logo {
-    color: #fff;
-  }
+.logo {
+  height: 64px;
+  line-height: 64px;
+  font-size: 20px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.nav-theme-dark >>> .logo {
+  color: #fff;
+}
 </style>

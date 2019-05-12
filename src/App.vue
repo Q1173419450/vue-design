@@ -5,9 +5,6 @@
   </div>
 </template>
 
-<script>
+<script></script>
 
-</script>
-
-<style lang="less">
-</style>
+<style lang="less"></style>

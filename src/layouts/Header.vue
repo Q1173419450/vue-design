@@ -4,13 +4,13 @@
 
 <script>
 export default {
-name: ''
-}
+  name: ""
+};
 </script>
 
 <style scoped>
-  .header {
-    float: right;
-    margin: 0;
-  }
+.header {
+  float: right;
+  margin: 0;
+}
 </style>

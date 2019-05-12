@@ -2,10 +2,10 @@ import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
 import store from "./store";
-import { Button, layout, Icon, Drawer, Radio, Menu } from 'ant-design-vue';
+import { Button, layout, Icon, Drawer, Radio, Menu } from "ant-design-vue";
 
-import Authorized from './components/Authorized';
-import auth from './directives/auth';
+import Authorized from "./components/Authorized";
+import auth from "./directives/auth";
 // import request from './utils/request';
 
 // import 'ant-design-vue/dist/antd.less';
