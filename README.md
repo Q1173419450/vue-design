@@ -49,6 +49,22 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ### 使用 Echarts
 
+### 使用 mock （自己写假数据，十分危险）
+
+### 联调 mock 环境与正式环境
+
+### jsx
+
+### form 表单校验
+
+### vuex & 路由跳转 this.$router.push()
+
+### 自定义校验，封装组件
+
+### icon & svg 引入及组件 && 查看 webpack 配置：vue inspect > 文件名
+
+### 设计、改变页面颜色、antd-theme-webpack-plugin
+
 问题：
   - 37讲
     - 绑定属性
